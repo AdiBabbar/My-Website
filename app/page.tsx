@@ -193,8 +193,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Photography Workshop */}
             <div className="bg-red-50 border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-left">
-              <div className="relative h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                <Camera className="h-24 w-24 text-white" />
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src="/photography-workshop-banner.png"
+                  alt="Photography workshop with professional camera equipment"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent"></div>
               </div>
               <div className="p-8">
                 <div className="flex items-center gap-2 mb-4">
@@ -202,7 +207,7 @@ export default function HomePage() {
                     <Camera className="h-6 w-6 text-white" />
                   </div>
                   <div className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
-                    August 20-22, 2025
+                    August 20 - 22
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">Intro to Photography</h3>
@@ -213,7 +218,7 @@ export default function HomePage() {
                 <div className="space-y-2 mb-6 text-sm text-slate-600">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-red-500" />
-                    <span>August 20-22, 2025</span>
+                    <span>August 20 - 22</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-red-500" />
@@ -235,8 +240,13 @@ export default function HomePage() {
 
             {/* Videography Workshop */}
             <div className="bg-blue-50 border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-right animation-delay-200">
-              <div className="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <Video className="h-24 w-24 text-white" />
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src="/videography-workshop-banner.png"
+                  alt="Videography workshop with professional video equipment"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
               </div>
               <div className="p-8">
                 <div className="flex items-center gap-2 mb-4">
@@ -244,7 +254,7 @@ export default function HomePage() {
                     <Video className="h-6 w-6 text-white" />
                   </div>
                   <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
-                    August 20-22, 2025
+                    August 20 - 22
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">Intro to Videography</h3>
@@ -255,7 +265,7 @@ export default function HomePage() {
                 <div className="space-y-2 mb-6 text-sm text-slate-600">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-blue-500" />
-                    <span>August 20-22, 2025</span>
+                    <span>August 20 - 22</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-blue-500" />
