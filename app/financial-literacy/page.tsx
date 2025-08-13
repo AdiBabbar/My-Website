@@ -1,12 +1,13 @@
 "use client"
 
 import type React from "react"
-import Link from "next/link"
+
 import { useState } from "react"
 import {
-  Camera,
-  Video,
+  DollarSign,
+  CreditCard,
   PiggyBank,
+  TrendingUp,
   Send,
   CheckCircle,
   Mail,
@@ -14,12 +15,9 @@ import {
   Star,
   Menu,
   X,
-  Calendar,
-  Clock,
-  MapPin,
 } from "lucide-react"
 
-export default function HomePage() {
+export default function FinancialLiteracyArchive() {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -74,7 +72,6 @@ export default function HomePage() {
             <nav className="hidden md:flex space-x-8">
               {[
                 { id: "home", label: "Home" },
-                { id: "upcoming", label: "Upcoming" },
                 { id: "about", label: "About" },
                 { id: "workshops", label: "Workshops" },
                 { id: "signup", label: "Sign Up" },
@@ -101,7 +98,6 @@ export default function HomePage() {
             <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
               {[
                 { id: "home", label: "Home" },
-                { id: "upcoming", label: "Upcoming" },
                 { id: "about", label: "About" },
                 { id: "workshops", label: "Workshops" },
                 { id: "signup", label: "Sign Up" },
@@ -124,25 +120,25 @@ export default function HomePage() {
       <section id="home" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 to-teal-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left animate-fade-in-up">
+            <div className="text-center md:text-left">
               <div className="mb-6 inline-block bg-red-100 text-red-700 text-lg px-4 py-2 rounded-full">
                 🎉 FREE Workshops!
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6">
-                Creative Skills for
-                <span className="text-emerald-600 block">Everyone</span>
+                Financial Literacy for
+                <span className="text-emerald-600 block">Young Minds</span>
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Smart Save Jr. empowers people with essential creative skills through engaging, hands-on workshops.
-                Discover photography and videography in a fun, supportive environment!
+                Smart Save Jr. empowers youth with essential money skills through engaging, interactive workshops. Give
+                your child the financial foundation they need to succeed in life!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button
-                  onClick={() => scrollToSection("upcoming")}
+                  onClick={() => scrollToSection("signup")}
                   className="bg-emerald-600 hover:bg-emerald-700 text-white text-lg px-8 py-4 rounded-lg font-semibold transition-colors"
                 >
-                  View Upcoming Workshops
+                  Join Our Next Workshop - FREE!
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
@@ -153,7 +149,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative animate-fade-in-right animation-delay-200">
+            <div className="relative">
               <div className="relative h-96 w-full flex items-center justify-center">
                 <div className="relative w-80 h-80">
                   <div className="absolute inset-0 bg-white rounded-3xl flex items-center justify-center shadow-2xl border-4 border-emerald-100">
@@ -163,115 +159,17 @@ export default function HomePage() {
                   </div>
 
                   <div className="absolute -top-6 -right-6 w-20 h-20 bg-red-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <Camera className="h-10 w-10 text-white" />
+                    <DollarSign className="h-10 w-10 text-white" />
                   </div>
 
                   <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <Video className="h-10 w-10 text-white" />
+                    <CreditCard className="h-10 w-10 text-white" />
                   </div>
 
                   <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <Star className="h-10 w-10 text-white" />
+                    <TrendingUp className="h-10 w-10 text-white" />
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events Section */}
-      <section id="upcoming" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-slate-800 mb-6">Upcoming Workshops</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Join our hands-on creative workshops and learn new skills in a fun, supportive environment
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Photography Workshop */}
-            <div className="bg-red-50 border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-left">
-              <div className="relative h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                <Camera className="h-24 w-24 text-white" />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center">
-                    <Camera className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
-                    August 20-22, 2025
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Intro to Photography</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Learn the fundamentals of photography including composition, lighting, and camera settings. Perfect
-                  for beginners who want to take better photos with any camera.
-                </p>
-                <div className="space-y-2 mb-6 text-sm text-slate-600">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-red-500" />
-                    <span>August 20-22, 2025</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-red-500" />
-                    <span>12:00 PM - 1:00 PM</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-red-500" />
-                    <span>Online Workshop</span>
-                  </div>
-                </div>
-                <Link
-                  href="/photography"
-                  className="w-full bg-red-500 hover:bg-red-600 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors block"
-                >
-                  Learn More & Sign Up
-                </Link>
-              </div>
-            </div>
-
-            {/* Videography Workshop */}
-            <div className="bg-blue-50 border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-right animation-delay-200">
-              <div className="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <Video className="h-24 w-24 text-white" />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
-                    <Video className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
-                    August 20-22, 2025
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">Intro to Videography</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Discover the art of video creation from planning to editing. Learn about storytelling, camera
-                  movement, and basic editing techniques to create engaging videos.
-                </p>
-                <div className="space-y-2 mb-6 text-sm text-slate-600">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-blue-500" />
-                    <span>August 20-22, 2025</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-blue-500" />
-                    <span>1:30 PM - 2:30 PM</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-blue-500" />
-                    <span>Online Workshop</span>
-                  </div>
-                </div>
-                <Link
-                  href="/videography"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors block"
-                >
-                  Learn More & Sign Up
-                </Link>
               </div>
             </div>
           </div>
@@ -279,12 +177,13 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto animate-fade-in-up">
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-800 mb-6">About Smart Save Jr.</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We're on a mission to empower people with practical creative skills that will serve them for life.
+              We're on a mission to empower the next generation with financial literacy skills that will serve them for
+              life.
             </p>
           </div>
 
@@ -302,9 +201,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-slate-600 leading-relaxed">
-                  Hi! I'm Aditya Babbar, founder of Smart Save Jr. My passion for creative education and helping people
-                  develop new skills inspired me to create this platform. I believe learning should be accessible,
-                  engaging, and fun for everyone.
+                  Hi! I'm Aditya Babbar, founder of Smart Save Jr. My passion for finance and seeing young people
+                  struggle with basic money concepts inspired me to create this platform. I believe financial education
+                  should be accessible, engaging, and relevant for today's youth.
                 </p>
               </div>
             </div>
@@ -315,9 +214,9 @@ export default function HomePage() {
                   <CheckCircle className="h-6 w-6 text-emerald-600" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-slate-800 mb-2">Hands-On Learning</h4>
+                  <h4 className="text-lg font-semibold text-slate-800 mb-2">Interactive Learning</h4>
                   <p className="text-slate-600">
-                    Interactive workshops with practical exercises that help you learn by doing.
+                    Hands-on activities and real-world scenarios make learning fun and memorable.
                   </p>
                 </div>
               </div>
@@ -329,7 +228,7 @@ export default function HomePage() {
                 <div>
                   <h4 className="text-lg font-semibold text-slate-800 mb-2">Small Groups</h4>
                   <p className="text-slate-600">
-                    Limited class sizes ensure personalized attention and meaningful feedback.
+                    Limited class sizes ensure personalized attention and meaningful discussions.
                   </p>
                 </div>
               </div>
@@ -341,7 +240,7 @@ export default function HomePage() {
                 <div>
                   <h4 className="text-lg font-semibold text-slate-800 mb-2">Completely Free</h4>
                   <p className="text-slate-600">
-                    All our workshops are free because we believe creative education should be accessible to everyone.
+                    All our workshops are free because we believe financial education should be accessible to everyone.
                   </p>
                 </div>
               </div>
@@ -351,45 +250,45 @@ export default function HomePage() {
       </section>
 
       {/* Workshops Section */}
-      <section id="workshops" className="py-20 px-4 sm:px-6 lg:px-8 bg-white animate-fade-in-up animation-delay-200">
+      <section id="workshops" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-800 mb-6">Our Workshop Topics</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Comprehensive creative education covering essential skills for modern content creation
+              Comprehensive financial education covering all the essentials young people need to know
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <Camera className="h-12 w-12 text-white" />,
-                title: "Photography Fundamentals",
+                icon: <DollarSign className="h-12 w-12 text-white" />,
+                title: "Money Fundamentals",
                 description:
-                  "Master composition, lighting, and camera settings. Learn to capture compelling images with any camera, from smartphones to DSLRs.",
-                color: "bg-red-500",
-                bgColor: "bg-red-50",
+                  "Master the basics: What is money, needs vs wants, and smart budgeting with the 50/30/20 rule. Build a strong foundation for lifelong financial success.",
+                color: "bg-emerald-500",
+                bgColor: "bg-emerald-50",
               },
               {
-                icon: <Video className="h-12 w-12 text-white" />,
-                title: "Video Production",
+                icon: <CreditCard className="h-12 w-12 text-white" />,
+                title: "Financial Tools & Technology",
                 description:
-                  "Explore storytelling, camera movement, and editing techniques. Create engaging videos from concept to final cut.",
+                  "Explore modern banking, digital wallets, debit cards, and payment systems. Learn how to safely navigate today's financial technology landscape.",
                 color: "bg-blue-500",
                 bgColor: "bg-blue-50",
               },
               {
-                icon: <Star className="h-12 w-12 text-white" />,
-                title: "Creative Development",
+                icon: <TrendingUp className="h-12 w-12 text-white" />,
+                title: "Building Wealth & Entrepreneurship",
                 description:
-                  "Build your creative confidence and develop your unique style. Learn to share your work and connect with audiences.",
+                  "Discover how to create income through entrepreneurship, make smart financial decisions, and apply everything you've learned to real-world scenarios.",
                 color: "bg-purple-500",
                 bgColor: "bg-purple-50",
               },
             ].map((workshop, index) => (
               <div
                 key={index}
-                className={`border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden ${workshop.bgColor} animate-fade-in-up ${index === 1 ? "animation-delay-200" : index === 2 ? "animation-delay-400" : ""}`}
+                className={`border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden ${workshop.bgColor}`}
               >
                 <div className="p-8">
                   <div
@@ -407,15 +306,16 @@ export default function HomePage() {
       </section>
 
       {/* Sign Up Section */}
-      <section id="signup" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section id="signup" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <div className="mb-6 inline-block bg-red-100 text-red-700 text-lg px-6 py-3 rounded-full">
               🎉 100% FREE - No Hidden Costs!
             </div>
-            <h2 className="text-4xl font-bold text-slate-800 mb-6">Stay Updated</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-6">Join Our Next Workshop</h2>
             <p className="text-xl text-slate-600">
-              Sign up to receive notifications about upcoming workshops and new creative learning opportunities
+              Sign up your child for our upcoming financial literacy workshop and give them the tools for lifelong
+              financial success
             </p>
           </div>
 
@@ -429,7 +329,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-3xl font-bold text-slate-800 mb-4">You're All Set!</h3>
                   <p className="text-xl text-slate-600">
-                    Thank you for signing up! We'll send you updates about upcoming workshops.
+                    Thank you for signing up! We'll send you workshop details and reminders via email.
                   </p>
                 </div>
               ) : (
@@ -478,13 +378,60 @@ export default function HomePage() {
                   </div>
 
                   <div>
+                    <label htmlFor="signupType" className="block text-lg font-medium text-slate-700 mb-2">
+                      Who is signing up?
+                    </label>
+                    <select
+                      id="signupType"
+                      name="signupType"
+                      required
+                      className="w-full h-14 text-lg border-2 border-slate-200 focus:border-emerald-500 rounded-lg px-4 outline-none transition-colors bg-white"
+                    >
+                      <option value="">Select an option</option>
+                      <option value="student">Student</option>
+                      <option value="parent">Parent/Guardian</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="age" className="block text-lg font-medium text-slate-700 mb-2">
+                        Student Age
+                      </label>
+                      <input
+                        id="age"
+                        name="age"
+                        type="number"
+                        placeholder="Your age"
+                        required
+                        min="8"
+                        max="14"
+                        className="w-full h-14 text-lg border-2 border-slate-200 focus:border-emerald-500 rounded-lg px-4 outline-none transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="school" className="block text-lg font-medium text-slate-700 mb-2">
+                        School
+                      </label>
+                      <input
+                        id="school"
+                        name="school"
+                        type="text"
+                        placeholder="Your school or college"
+                        className="w-full h-14 text-lg border-2 border-slate-200 focus:border-emerald-500 rounded-lg px-4 outline-none transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
                     <label htmlFor="interests" className="block text-lg font-medium text-slate-700 mb-2">
-                      What interests you most?
+                      What interests you most about financial literacy?
                     </label>
                     <textarea
                       id="interests"
                       name="interests"
-                      placeholder="Photography, videography, or other creative skills you'd like to learn..."
+                      placeholder="Tell us what you'd like to learn about money management, investing, saving, etc..."
                       className="w-full text-lg border-2 border-slate-200 focus:border-emerald-500 rounded-lg px-4 py-3 outline-none transition-colors resize-none"
                       rows={4}
                     />
@@ -494,11 +441,11 @@ export default function HomePage() {
                     type="submit"
                     className="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xl h-16 font-semibold rounded-lg transition-colors"
                   >
-                    Stay Updated - It's FREE!
+                    Sign Me Up - It's FREE!
                   </button>
 
                   <p className="text-center text-slate-500">
-                    No spam, no cost, no commitment. Just updates about creative workshops!
+                    No spam, no cost, no commitment. Just valuable financial education!
                   </p>
                 </form>
               )}
@@ -508,7 +455,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-slate-800 mb-6">Get In Touch</h2>
@@ -598,13 +545,10 @@ export default function HomePage() {
               </div>
               <h3 className="text-3xl font-bold">Smart Save Jr.</h3>
             </div>
-            <p className="text-slate-300 mb-6 text-lg">Empowering creativity through accessible education</p>
+            <p className="text-slate-300 mb-6 text-lg">Empowering the next generation with financial literacy skills</p>
             <div className="flex justify-center space-x-8 text-sm text-slate-400 mb-6">
               <button onClick={() => scrollToSection("home")} className="hover:text-white transition-colors">
                 Home
-              </button>
-              <button onClick={() => scrollToSection("upcoming")} className="hover:text-white transition-colors">
-                Upcoming
               </button>
               <button onClick={() => scrollToSection("about")} className="hover:text-white transition-colors">
                 About
@@ -615,9 +559,6 @@ export default function HomePage() {
               <button onClick={() => scrollToSection("contact")} className="hover:text-white transition-colors">
                 Contact
               </button>
-              <Link href="/financial-literacy" className="hover:text-white transition-colors">
-                Financial Literacy
-              </Link>
             </div>
             <p className="text-slate-500 text-sm">© 2025 Smart Save Jr. All rights reserved.</p>
           </div>
